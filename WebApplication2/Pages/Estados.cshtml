@@ -1,0 +1,75 @@
+﻿@page
+@model WebApplication2.Pages.EstadosModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Estados</title>
+</head>
+<body>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EnaexEstados[0].HorasUtilizacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnaexEstados[0].Rego)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnaexEstados[0].NomVehiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnaexEstados[0].CodFlota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnaexEstados[0].NomFlota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnaexEstados[0].CodGrupoVehiculo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+@foreach (var item in Model.EnaexEstados) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorasUtilizacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rego)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomVehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodFlota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomFlota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodGrupoVehiculo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
